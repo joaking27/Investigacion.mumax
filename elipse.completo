@@ -1,0 +1,25 @@
+SetGridsize(128, 128, 1)
+SetCellsize(1070e-9/128, 1070e-9/128, 1070e-9/128)
+
+Msat  = 860e3
+Aex   = 13e-12
+alpha = 1e-13
+a := rect(470e-9, 170e-9).transl(0, 300e-9, 0)
+b := (rect(470e-9, 170e-9).transl(0,-300e-9, 0)).add(a)
+c := (rect(170e-9, 470e-9).transl(300e-9,0, 0)).add(b)
+d := (rect(170e-9, 470e-9).transl(-300e-9,0, 0)).add(c)
+
+setgeom(d)
+
+m = uniform(1, 1., 0)
+B_ext = vector(-24.6E-3, -24.6E-3, 0)
+relax()
+save(m)    // relaxed state
+
+autosave(m, 200e-13) // autosaves #1 every #2 seconds 
+// table es una variable de mumax que guarda el promedio espacial de las cantidades que uno quiera. Por defecto trae el promedio de la magnetizacion (m)
+tableadd(torque) // tableadd permite anadir una cantidad a la variable table, para que la guarde cada vez que guardemos la tabla. En este caso le pedi el torque
+tableautosave(10e-13) // esta funcion autoguarda la tabla cada #1 segundos
+B_ext.set(vector(0, 0, 0))
+Temp=500
+run(10e-9)
