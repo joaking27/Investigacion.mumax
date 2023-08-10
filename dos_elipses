@@ -1,0 +1,18 @@
+SetGridsize(128, 128, 1)
+SetCellsize(1070e-9/128, 1070e-9/128, 1070e-9/128)
+
+Msat  = 860e3
+Aex   = 13e-10
+alpha = 1e-13
+
+c := (ellipse(170e-9, 470e-9).transl(300e-9,0, 0))
+d := (ellipse(170e-9, 470e-9).transl(-300e-9,0, 0)).add(c)
+
+setgeom(d)
+
+m = uniform(1, 1., 0)
+relax()
+save(m) // Minimum energy state
+B_ext = vector(-24.6E-3, -24.6E-3, 0)
+relax()
+save(m)    // Field-set state
