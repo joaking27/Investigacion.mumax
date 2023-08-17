@@ -14,7 +14,7 @@ for B:=170.0e-9; B<=450.0e-9; B+=28.0e-9{
     m = uniform(1, 1., 0)
     relax()
     save(m) // Minimum energy state
-    B_ext := vector(-24.6E-3, -24.6E-3, 0)
+    B_ext = vector(-24.6E-3, -24.6E-3, 0)
     relax()
     save(m)    // Field-set state
 }
