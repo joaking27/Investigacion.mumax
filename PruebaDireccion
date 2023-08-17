@@ -5,13 +5,11 @@ Msat  = 860e3
 Aex   = 13e-10
 alpha = 1e-13
 
-c := (ellipse(170e-9, 470e-9).transl(300e-9,0, 0))
-d := (ellipse(170e-9, 470e-9).transl(-300e-9,0, 0)).add(c)
 
-setgeom(d)
-
+defregion(1, ellipse(170e-9, 470e-9).transl(300e-9,0, 0))
+defregion(2, ellipse(170e-9, 470e-9).transl(-300e-9,0, 0))
 m.setRegion(1, uniform(1, 1, 0))
-m.setRegion(2, uniform(-1, -1, 0))
+m.setRegion(2, uniform(-1, -1, 0)
 
 
 relax()
