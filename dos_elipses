@@ -11,7 +11,7 @@ d := (ellipse(170e-9, 470e-9).transl(-300e-9,0, 0)).add(c)
 setgeom(d)
 
 m = uniform(1, 1., 0)
-h = uniform(1, -1., 0)
+
 relax()
 save(m) // Minimum energy state
 B_ext = vector(-24.6E-3, -24.6E-3, 0)
