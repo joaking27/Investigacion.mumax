@@ -6,9 +6,9 @@ Aex   = 13e-10
 alpha = 1e-13
 
 
-c := defregion(1, ellipse(170e-9, 470e-9).transl(300e-9,0, 0))
+c := defregion(1, xrange(0, inf))
+d := defregion(2, xrange(-inf, 0)).add(c)
 m.setRegion(1, uniform(1, 1, 0))
-d := defregion(2, ellipse(170e-9, 470e-9).transl(-300e-9,0, 0)).add(c)
 m.setRegion(2, uniform(1, -1, 0))
 
 setgeom(d)
