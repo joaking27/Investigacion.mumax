@@ -5,6 +5,9 @@ Msat  = 860e3
 Aex   = 13e-10
 alpha = 1e-13
 
+tableAdd(E_total)
+tablesave()
+
 for B:=170.0e-9; B<=450.0e-9; B+=28.0e-9{
 
     c := (ellipse(170e-9, 470e-9).transl(B,0, 0))
@@ -17,4 +20,6 @@ for B:=170.0e-9; B<=450.0e-9; B+=28.0e-9{
     B_ext = vector(-24.6E-3, -24.6E-3, 0)
     relax()
     save(m)    // Field-set state
+
+
 }
