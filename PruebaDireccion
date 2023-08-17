@@ -19,8 +19,3 @@ save(m) // Minimum energy state
 B_ext = vector(-24.6E-3, -24.6E-3, 0)
 relax()
 save(m)    // Field-set state
-
-
-
-m.setRegion(1, uniform(1, 1, 0))
-m.setRegion(2, uniform(-1, -1, 0))
