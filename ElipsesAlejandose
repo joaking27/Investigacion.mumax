@@ -5,18 +5,16 @@ Msat  = 860e3
 Aex   = 13e-10
 alpha = 1e-13
 
-for B:=170.0e-9; B<=450.0e-9; B+=56.0e-9{
-
-    tableAdd(E_total)
-    tablesave()
+for B:=170.0e-9; B<=450.0e-9; B+=28.0e-9{
 
     c := (ellipse(170e-9, 470e-9).transl(B,0, 0))
     d := (ellipse(170e-9, 470e-9).transl(-B,0, 0)).add(c)
     setgeom(d)
 
-    m = uniform(1, 1., 0)
+    m = TwoDomain(0,1,0,  0,0,0,  0,-1,0) // Néel wall
     relax()
     save(m) // Minimum energy state
+
     B_ext = vector(-24.6E-3, -24.6E-3, 0)
     relax()
     save(m)    // Field-set state
