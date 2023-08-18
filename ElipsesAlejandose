@@ -19,5 +19,10 @@ for B:=170.0e-9; B<=450.0e-9; B+=28.0e-9{
     relax()
     save(m)    // Field-set state
 
+    tableAdd(E_total)
+
+
 
 }
+
+tablesave()
