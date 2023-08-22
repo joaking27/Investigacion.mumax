@@ -1,0 +1,21 @@
+SetGridsize(128, 128, 1)
+SetCellsize(1070e-9/128, 1070e-9/128, 1070e-9/128)
+
+Msat  = 860e3
+Aex   = 13e-10
+alpha = 1e-13
+
+tableAdd(E_total) 
+for B:=85.0e-9; B<=450.0e-9; B+=3.68e-9{
+
+    c := (ellipse(170e-9, 470e-9).transl(B,0, 0))
+    d := (ellipse(170e-9, 470e-9).transl(-B,0, 0)).add(c)
+    setgeom(d)
+
+    m = uniform(1,1,0)
+    save(m) // Minimum energy state
+
+
+    tablesave()   
+
+}
