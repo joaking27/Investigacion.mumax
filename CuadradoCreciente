@@ -1,0 +1,20 @@
+SetGridsize(128, 128, 1)
+SetCellsize(1070e-9/128, 1070e-9/128, 1070e-9/128)
+
+Msat  = 860e3
+Aex   = 13e-10
+alpha = 1e-13
+
+tableAdd(E_total) 
+for B:=0.0e-9; B<=800.0e-9; B+=50e-9{
+
+    d := (rect(200e-9+B, 200e-9+B))
+    setgeom(d)
+
+    m = uniform(0,1,0) 
+    save(m) // Minimum energy state
+
+
+    tablesave() 
+
+}
