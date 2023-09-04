@@ -31,5 +31,6 @@ for i := 1; B <= 450.0e-9; B += 3.68e-9 {
 
 for i, distancia := range distancias {
     tableAddVar(distancia, St1, St2)
+}
 
 tablesave()
