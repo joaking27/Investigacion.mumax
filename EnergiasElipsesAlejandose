@@ -22,7 +22,7 @@ tableAdd(E_zeeman)
 St1 := "Distancia"
 St2 := "Metros"
 
-AA := 85.0e-9
+distancias := [] // Lista para almacenar las distancias
 
 for B:=85.0e-9; B<=450.0e-9; B+=3.68e-9{
 
@@ -30,15 +30,21 @@ for B:=85.0e-9; B<=450.0e-9; B+=3.68e-9{
     d := (ellipse(170e-9, 470e-9).transl(-B,0, 0)).add(c)
     setgeom(d)
 
-
-    tableAddVar(AA, St1, St2)
-
-    AA := AA + 3.68e-9
+    distancias = append(distancias, B) // Agregar la distancia a la lista
 
     m = uniform(0,1,0)
     save(m) // Minimum energy state
 
 
-    tablesave()   
+    
 
 }
+
+for i, distancia := range distancias {
+    tableAddVar(distancia, St1, St2)
+
+tablesave()   
+
+
+
+
