@@ -16,7 +16,6 @@ tableAdd(E_zeeman)
 St1 := "Distancia"
 St2 := "Metros"
 
-B := 85.0e-9
 distancias := [] // Lista para almacenar las distancias
 
 for i := 1; B <= 450.0e-9; B += 3.68e-9 {
@@ -30,10 +29,7 @@ for i := 1; B <= 450.0e-9; B += 3.68e-9 {
     save(m) // Guardar el estado de mínima energía
 }
 
-// Agregar las distancias a la tabla
 for i, distancia := range distancias {
     tableAddVar(distancia, St1, St2)
-}
 
-// Guardar la tabla después de agregar todas las variables
 tablesave()
