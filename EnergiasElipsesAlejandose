@@ -24,7 +24,7 @@ X :=0
 St1 := "Distancia"
 St2 := "Metros"
 
-tableAddVar(X, St1, St2)
+
 
 for B:=85.0e-9; B<=450.0e-9; B+=3.68e-9{
 
@@ -33,6 +33,7 @@ for B:=85.0e-9; B<=450.0e-9; B+=3.68e-9{
     setgeom(d)
 
     X := B
+    tableAddVar(X, St1, St2)
 
     m = uniform(0,1,0)
     save(m) // Minimum energy state
