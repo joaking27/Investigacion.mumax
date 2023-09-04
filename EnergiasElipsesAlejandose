@@ -21,7 +21,7 @@ tableAdd(E_zeeman)
 
 X :=0
 
-tableAddVar(X)
+tableAddVar(X, 'Distancia', 'Metros')
 
 for B:=85.0e-9; B<=450.0e-9; B+=3.68e-9{
 
