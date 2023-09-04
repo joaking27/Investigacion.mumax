@@ -32,7 +32,7 @@ for B:=85.0e-9; B<=450.0e-9; B+=3.68e-9{
     d := (ellipse(170e-9, 470e-9).transl(-B,0, 0)).add(c)
     setgeom(d)
 
-    x := B
+    X := B
 
     m = uniform(0,1,0)
     save(m) // Minimum energy state
