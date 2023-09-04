@@ -1,0 +1,39 @@
+SetGridsize(128, 128, 1)
+SetCellsize(1070e-9/128, 1070e-9/128, 1070e-9/128)
+
+Msat  = 860e3
+Aex   = 13e-10
+alpha = 1e-13
+
+tableAdd(E_total)
+tableAdd(E_anis)
+tableAdd(E_custom)
+tableAdd(E_demag)
+tableAdd(E_exch)
+tableAdd(E_mel)
+tableAdd(E_zeeman)
+
+St1 := "Distancia"
+St2 := "Metros"
+
+B := 85.0e-9
+distancias := [] // Lista para almacenar las distancias
+
+for i := 1; B <= 450.0e-9; B += 3.68e-9 {
+    c := (ellipse(170e-9, 470e-9).transl(B, 0, 0))
+    d := (ellipse(170e-9, 470e-9).transl(-B, 0, 0)).add(c)
+    setgeom(d)
+
+    distancias = append(distancias, B) // Agregar la distancia a la lista
+
+    m = uniform(0, 1, 0)
+    save(m) // Guardar el estado de mínima energía
+}
+
+// Agregar las distancias a la tabla
+for i, distancia := range distancias {
+    tableAddVar(distancia, St1, St2)
+}
+
+// Guardar la tabla después de agregar todas las variables
+tablesave()
