@@ -33,7 +33,7 @@ for B:=85.0e-9; B<=450.0e-9; B+=3.68e-9{
 
     tableAddVar(AA, St1, St2)
 
-    AA :+=  3.68e-9
+    AA := AA + 3.68e-9
 
     m = uniform(0,1,0)
     save(m) // Minimum energy state
