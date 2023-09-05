@@ -7,14 +7,18 @@ alpha = 1e-13
 
 tableAdd(E_total)
 
-for B := 0.0e-9; B <= 1000.0e-9; B += 10e-9 {
-	d := (rect(20e-9+B, 20e-9+B))
-	setgeom(d)
-	m = uniform(0, 1, 0)
-	save(m)
+for B := 0.0e-9; B <= 1000.0e-9; B += 10e-9{
+    d := (rect(20e-9+B, 20e-9+B))
+    setgeom(d)
+    m = uniform(0, 1, 0)
+    save(m)
+
+    tx1 := Cropz(B,0,Nz)
+    tableAdd(tx1)
     
- 	tx1 := Cropz(B,0,Nz)
-  	tableAdd(tx1)
-    
-	tablesave()
+
+    m = uniform(0,1,0)
+    save(m) // Minimum energy state
+
 }
+tablesave()   
