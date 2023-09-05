@@ -19,9 +19,9 @@ tableAdd(E_mel)
 
 tableAdd(E_zeeman)
 
-for B:=0.0e-9; B<=800.0e-9; B+=50e-9{
+for B:=0.0e-9; B<=950.0e-9; B+=10e-9{
 
-    d := (rect(200e-9+B, 200e-9+B))
+    d := (rect(20e-9+B, 20e-9+B))
     setgeom(d)
 
     m = uniform(0,1,0) 
