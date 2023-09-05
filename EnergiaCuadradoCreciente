@@ -31,7 +31,7 @@ for B:=0.0e-9; B<=1000.0e-9; B+=10e-9{
     m = uniform(0,1,0) 
     save(m) // Minimum energy state
 
-    aa := (20e-9+B)**2
+    aa := (20e-9+B)*(20e-9+B)
 
     tableAutoSave(aa)
     
