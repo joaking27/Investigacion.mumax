@@ -19,9 +19,9 @@ tableAdd(E_mel)
 
 tableAdd(E_zeeman)
 
-area = []
+aa := 0
 
-tableAdd(area)
+tableAutoSave(aa)
 
 for B:=0.0e-9; B<=950.0e-9; B+=10e-9{
 
@@ -33,7 +33,7 @@ for B:=0.0e-9; B<=950.0e-9; B+=10e-9{
 
     aa := (20e-9+B)**2
 
-    area = append(area, aa)
+    tableAutoSave(aa)
     
     tablesave() 
 
