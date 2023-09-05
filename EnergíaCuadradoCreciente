@@ -19,8 +19,6 @@ tableAdd(E_mel)
 
 tableAdd(E_zeeman)
 
-tableAdd(Area)  // Agregar una tabla para guardar el área del cuadrado
-
 for B:=0.0e-9; B<=800.0e-9; B+=50e-9{
 
     d := (rect(200e-9+B, 200e-9+B))
@@ -29,8 +27,6 @@ for B:=0.0e-9; B<=800.0e-9; B+=50e-9{
     m = uniform(0,1,0) 
     save(m) // Minimum energy state
     
-    tableSet("Area", area) // Agregar el área a la tabla "Area"
-
     tablesave() 
 
 }
