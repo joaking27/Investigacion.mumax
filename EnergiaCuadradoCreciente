@@ -3,7 +3,7 @@ SetCellsize(1070e-9/128, 1070e-9/128, 1070e-9/128)
 
 Msat  = 860e3
 Aex   = 13e-10
-alpha = 0
+alpha = 0.5
 
 tableAdd(E_total)
 
