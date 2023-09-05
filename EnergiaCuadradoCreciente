@@ -35,6 +35,8 @@ for B:=0.0e-9; B<=1000.0e-9; B+=10e-9{
 
     tableAutoSave(aa)
 
+    tablesave() 
+
 }
 
-tablesave() 
+
