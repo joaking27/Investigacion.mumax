@@ -13,7 +13,7 @@ Aex = 1.0
 Ku1 = 0.1
 anisU = vector(1,0,0) 
 
-m = vortex(1,-1)
+m = uniform(0,1,0)
 
 tableadd(E_total)
 
