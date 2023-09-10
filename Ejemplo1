@@ -1,5 +1,5 @@
-N := 64
-setgridsize(N,N,N)
+N := 128
+setgridsize(N,N,1)
 
 Lmin := 8.0
 Lmax := 9.0
