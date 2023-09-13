@@ -1,9 +1,9 @@
-SetGridsize(128, 128, 1)
-SetCellsize(28e-9/128, 29e-9/128, 28e-9/128)
+SetGridsize(128, 32, 1)
+SetCellsize(500e-9/128, 125e-9/32, 3e-9)
 
-Msat  = 860e3
-Aex   = 13e-10
-alpha = 0.5
+Msat  = 800e3
+Aex   = 13e-12
+alpha = 0.02
 
 tableAdd(E_total)
 
