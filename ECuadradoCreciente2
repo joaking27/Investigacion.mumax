@@ -1,0 +1,34 @@
+SetGridsize(128, 128, 1)
+SetCellsize(3.84e-9/128, 3.84e-9/128, 3.84e-9/128)
+setpbc(0,0,0)
+
+Msat  = 860e3
+Aex   = 13e-10
+alpha = 0.5
+
+tableAdd(E_total)
+
+tableAdd(E_anis)
+
+tableAdd(E_custom)
+
+tableAdd(E_demag)
+
+tableAdd(E_exch)
+
+tableAdd(E_mel)
+
+tableAdd(E_zeeman)
+
+
+for B:=0.0e-9; B<=1000.0e-9; B+=10e-9{
+
+    d := (rect(20e-9+B, 20e-9+B))
+    setgeom(d)
+
+    m = uniform(0,1,0) 
+    save(m) // Minimum energy state
+
+    tablesave() 
+
+}
