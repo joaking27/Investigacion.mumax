@@ -1,5 +1,5 @@
 SetGridsize(128, 128, 1)
-SetCellsize(3.84e-12/128, 3.84e-12/128, 3.84e-12/128)
+SetCellsize(3.84e-9/128, 3.84e-9/128, 3.84e-9/128)
 
 Msat  = 860e3
 Aex   = 13e-10
