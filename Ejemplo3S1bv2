@@ -3,22 +3,22 @@ Nmax := 96
 Nstep := 8
 
 N := Nmin
-setgridsize(N,N,N)
+setgridsize(N,N,1)
 setcellsize(8/64,8/64,8/64)
 
 Msat = sqrt(2/mu0)  // vacuum Permeability
 Aex = 1.0
-Ku1 = 0.1
-anisU = vector(1,0,0) 
+// Ku1 = 0.1
+// anisU = vector(1,0,0) 
 
-m = uniform(1.0, 0, 0.001)
+m = uniform(1.0, 0, 0)
 
 tableadd(E_total)
 tableadd(E_exch)
 tableaddvar(N,"N","")
 
 for N=Nmin ; N<=Nmax; N+=Nstep {
-    setgridsize(N,N,0)
+    setgridsize(N,N,1)
     minimize()
     save(m)
     tablesave()
