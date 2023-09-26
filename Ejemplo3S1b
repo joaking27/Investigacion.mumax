@@ -3,7 +3,7 @@ Nmax := 96
 Nstep := 8
 
 N := Nmin
-setgridsize(N,N,0)
+setgridsize(N,N,1)
 setcellsize(8/64,8/64,8/64)
 
 Msat = sqrt(2/mu0)  // vacuum Permeability
