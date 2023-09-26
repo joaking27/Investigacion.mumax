@@ -18,7 +18,7 @@ tableadd(E_exch)
 tableaddvar(N,"N","")
 
 for N=Nmin ; N<=Nmax; N+=Nstep {
-    ssetgridsize(N,N,N)
+    setgridsize(N,N,N)
     minimize()
     save(m)
     tablesave()
