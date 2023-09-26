@@ -8,10 +8,10 @@ setcellsize(8/64,8/64,8/64)
 
 Msat = sqrt(2/mu0)  // vacuum Permeability
 Aex = 1.0
-// Ku1 = 0.1
-// anisU = vector(1,0,0) 
+Ku1 = 0.1
+anisU = vector(1,0,0) 
 
-m = uniform(1.0, 0, 0)
+m = uniform(1.0, 0, 0.001)
 
 tableadd(E_total)
 tableadd(E_exch)
