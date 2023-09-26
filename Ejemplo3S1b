@@ -16,6 +16,7 @@ anisU = vector(1,0,0)
 m = uniform(1.0, 0, 0.001)
 
 tableadd(E_total)
+tableadd(E_exch)
 tableaddvar(L,"L","")
 
 for L=Lmin ; L<=Lmax; L+=Lstep {
