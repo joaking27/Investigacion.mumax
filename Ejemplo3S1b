@@ -1,12 +1,10 @@
-N := 64
+Nmin := 16
+Nmax := 128
+Nstep := 8
+
+N := Nmin
 setgridsize(N,N,N)
-
-Lmin := 8.0
-Lmax := 9.0
-Lstep := 0.05
-
-L := Lmin
-setcellsize(L/N,L/N,L/N)
+setcellsize(8/64,8/64,8/64)
 
 Msat = sqrt(2/mu0)
 Aex = 1.0
@@ -17,14 +15,11 @@ m = uniform(1.0, 0, 0.001)
 
 tableadd(E_total)
 tableadd(E_exch)
-save(m)
-tableaddvar(L,"L","")
+tableaddvar(N,"N","")
 
-for L=Lmin ; L<=Lmax; L+=Lstep {
-    setcellsize(L/N,L/N,L/N)
+for N=Nmin ; N<=Nmax; N+=Nstep {
+    ssetgridsize(N,N,N)
     minimize()
-
-    
-    
+    save(m)
     tablesave()
 }
