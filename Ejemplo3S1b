@@ -17,13 +17,14 @@ m = uniform(1.0, 0, 0.001)
 
 tableadd(E_total)
 tableadd(E_exch)
+save(m)
 tableaddvar(L,"L","")
 
 for L=Lmin ; L<=Lmax; L+=Lstep {
     setcellsize(L/N,L/N,L/N)
     minimize()
 
-    save(m)
+    
     
     tablesave()
 }
