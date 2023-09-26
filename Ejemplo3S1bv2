@@ -11,7 +11,7 @@ Aex = 1.0
 // Ku1 = 0.1
 // anisU = vector(1,0,0) 
 
-m = uniform(1.0, 0, 0)
+m = randomMag()                //uniform(1.0, 0, 0)
 
 tableadd(E_total)
 tableadd(E_exch)
@@ -19,7 +19,7 @@ tableaddvar(N,"N","")
 
 for N=Nmin ; N<=Nmax; N+=Nstep {
     setgridsize(N,N,1)
-    relax()                                   // minimize()
+                                   // minimize()
     save(m)
     tablesave()
 }
